@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Metis.Application.Views.ConsoleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converters="clr-namespace:Metis.Application.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="240" 
+             d:DesignWidth="400"
+             DataContext="{Binding Console, Source={StaticResource Locator}}">
+    <UserControl.Resources>
+        <converters:TextWrapConverter x:Key="TextWrapConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <ScrollViewer>
+            <ItemsControl ItemsSource="{Binding ConsoleFactory.Messages, Mode=OneWay}" VerticalAlignment="Bottom">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel>
+                            <TextBlock Background="Transparent" Foreground="Gray" Text="{Binding Time, Mode=OneWay, Converter={StaticResource TextWrapConverter}, ConverterParameter=[%s]}"/>
+                            <TextBlock Margin="4,0,4,0" Background="Transparent" Foreground="Red" Text="{Binding Source, Mode=OneWay, Converter={StaticResource TextWrapConverter}, ConverterParameter=%s:}"/>
+                            <TextBox Background="Transparent" Foreground="Black" BorderThickness="0" IsReadOnly="True" Text="{Binding Message, Mode=OneWay}"/>
+                        </DockPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

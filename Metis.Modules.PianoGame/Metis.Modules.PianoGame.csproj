@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(DefaultNetStandardVersion)</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Metis.Core\Metis.Core.csproj" />
+    <ProjectReference Include="..\Metis.ImageProcessing.Utilities\Metis.ImageProcessing.Utilities.csproj" />
+  </ItemGroup>
+
+</Project>

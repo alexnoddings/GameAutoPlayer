@@ -1,0 +1,17 @@
+﻿<Window x:Class="Metis.Application.Views.ReticuleWindow"
+        x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Metis.Application.Views"
+        mc:Ignorable="d"
+        WindowStyle="None" AllowsTransparency="True" BorderThickness="0" Background="Transparent"
+        Title="Metis Reticule"
+        Width="64" Height="64"
+        ShowInTaskbar="False"
+        Deactivated="ReticuleWindow_OnDeactivated">
+    <Grid>
+        <Grid Name="Reticule" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Red" />
+    </Grid>
+</Window>

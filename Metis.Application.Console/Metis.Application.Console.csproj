@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>MetisConsole</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Moq" Version="4.13.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Metis.Core\Metis.Core.csproj" />
+    <ProjectReference Include="..\Metis.ImageProcessing.Ocr.Tesseract\Metis.ImageProcessing.Ocr.Tesseract.csproj" />
+    <ProjectReference Include="..\Metis.ImageProcessing.Utilities\Metis.ImageProcessing.Utilities.csproj" />
+    <ProjectReference Include="..\Metis.Interaction.Input.Desktop\Metis.Interaction.Input.Desktop.csproj" />
+    <ProjectReference Include="..\Metis.Modules.TypingGame\Metis.Modules.TypingGame.csproj" />
+  </ItemGroup>
+
+</Project>

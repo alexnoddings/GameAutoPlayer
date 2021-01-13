@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Metis.Application.Views.SystemSettingsView"
+             x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:Metis.Application.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" 
+             d:DesignWidth="240"
+             DataContext="{Binding SystemSettings, Source={StaticResource Locator}}">
+    <UserControl.Resources>
+        <converters:EnumToBoolConverter x:Key="EnumToBoolConverter" />
+    </UserControl.Resources>
+    <StackPanel>
+        <StackPanel Orientation="Vertical">
+            <Label Content="Input Method" />
+            <RadioButton Content="Process"   IsChecked="{Binding Path=SystemSettings.InputMethod, Converter={StaticResource EnumToBoolConverter}, ConverterParameter=Process}" />
+            <RadioButton Content="Desktop"   IsChecked="{Binding Path=SystemSettings.InputMethod, Converter={StaticResource EnumToBoolConverter}, ConverterParameter=Desktop}" />
+        </StackPanel>
+        <Separator Height="0" Margin="0,4" />
+        <StackPanel Orientation="Vertical">
+            <Label Content="Window Capture Method" />
+            <RadioButton Content="Process"   IsChecked="{Binding Path=SystemSettings.WindowCaptureMethod, Converter={StaticResource EnumToBoolConverter}, ConverterParameter=Process}" />
+            <RadioButton Content="Desktop"   IsChecked="{Binding Path=SystemSettings.WindowCaptureMethod, Converter={StaticResource EnumToBoolConverter}, ConverterParameter=Desktop}" />
+        </StackPanel>
+        <Separator Height="0" Margin="0,4" />
+        <CheckBox Content="Always On Top" IsChecked="{Binding SystemSettings.IsAlwaysOnTop}" />
+        <Separator Height="0" Margin="0,4" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="6" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label   Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Content="Process Name:" />
+            <TextBox Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Text="{Binding SystemSettings.TargetProcessName}" Margin="0,2" />
+        </Grid>
+    </StackPanel>
+</UserControl>

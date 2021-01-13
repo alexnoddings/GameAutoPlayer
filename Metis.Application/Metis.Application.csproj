@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <AssemblyName>Metis</AssemblyName>
+    <TargetFramework>netcoreapp5.0</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MvvmLightLibsStd10" Version="5.4.1.1" />
+
+    <ProjectReference Include="..\Metis.Core\Metis.Core.csproj" />
+
+    <ProjectReference Include="..\Metis.Interaction.Input.Desktop\Metis.Interaction.Input.Desktop.csproj" />
+    <ProjectReference Include="..\Metis.Interaction.Input.Process\Metis.Interaction.Input.Process.csproj" />
+
+    <ProjectReference Include="..\Metis.Interaction.WindowCapture.Desktop\Metis.Interaction.WindowCapture.Desktop.csproj" />
+    <ProjectReference Include="..\Metis.Interaction.WindowCapture.Process\Metis.Interaction.WindowCapture.Process.csproj" />
+
+    <ProjectReference Include="..\Metis.ImageProcessing.Ocr.Tesseract\Metis.ImageProcessing.Ocr.Tesseract.csproj" />
+
+    <ProjectReference Include="..\Metis.Modules.PianoGame\Metis.Modules.PianoGame.csproj" />
+
+    <ProjectReference Include="..\Metis.Modules.TypingGame\Metis.Modules.TypingGame.csproj" />
+  </ItemGroup>
+
+</Project>
